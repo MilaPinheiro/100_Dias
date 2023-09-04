@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas vindas para ele(a).</h2>
+
+        <input class="input" type="text" placeholder="Digite seu nome: " value="">
+        <button onclick="mensagem()">Enviar</button>
+        <p></p>
+    </div>
+
+
+</body>
+<script>
+    /*Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boasvindas para ela:
+    Ex:
+    Qual é o seu nome? João da Silva
+    Olá João da Silva, é um prazer te conhecer! */
+
+    
+    let paragrafo = document.querySelector('p');
+    const input = document.querySelector('.input');
+    
+
+    function mensagem(){
+        const nome = input.value
+        paragrafo.innerHTML = "Olá " + nome + ", é um prazer te conhecer!";  
+        input.value = ""; 
+    };
+    
+
+
+
+</script>
+
+</html>
