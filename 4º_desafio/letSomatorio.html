@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatório</title>
+</head>
+<body>
+    <div>
+        <h2> Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório
+            entre eles.</h2>
+
+        <div>
+            <input class="valor1" type="text" placeholder="Valor 1" >
+            <input class="valor2" type="number" placeholder="Valor 2" >
+           <button onClick="mostrarSomatorio()">Calcular</button>
+        </div>
+
+        <p class="mensagem"></p>
+    </div>
+</body>
+
+<script>
+    /*  Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório
+entre eles.
+Ex:
+Digite um valor: 8
+Digite outro valor: 5
+A soma entre 8 e 5 é igual a 13. */
+
+let valor1 = document.querySelector(".valor1");
+let valor2 = document.querySelector(".valor2");
+
+
+function mostrarSomatorio() {
+    let numberOne =  parseFloat(valor1.value);
+    let numberTwo = parseFloat(valor2.value);
+    let mensagem = document.querySelector(".mensagem");
+
+    let sum = numberOne + numberTwo
+
+    if(numberOne > 0 && numberTwo > 0)  {
+
+        mensagem.innerHTML = `A soma entre ${numberOne} e ${numberTwo} é igual a ${sum}.`
+    } else {
+
+        mensagem.innerHTML = "Você deve digitar dois números"
+
+    }
+
+    valor1.value = ""
+    valor2.value = ""
+    
+}
+
+</script>
+</html>
