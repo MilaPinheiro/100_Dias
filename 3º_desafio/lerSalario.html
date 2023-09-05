@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ler Salário</title>
+</head>
+<body>
+    <div>
+        <h2>Crie um programa que leia o nome e o salário de um funcionário, mostrando no 
+            final uma mensagem</h2>
+
+        <div>
+            <input class="funcionario" type="text" placeholder="Informe o funcionário">
+            <input class="salario" type="number" placeholder="Informe o salário">
+            <button onclick="mostrarMensagem()">Enviar</button>
+        </div>
+
+        <p class="mensagem"></p>
+    </div>
+</body>
+
+<script>
+    /*  Crie um programa que leia o nome e o salário de um funcionário, mostrando no 
+final uma mensagem.
+Ex:
+Nome do Funcionário: Maria do Carmo
+Salário: 1850,45
+O funcionário Maria do Carmo tem um salário de R$1850,45 em Junho.*/
+
+let input1 = document.querySelector(".funcionario");
+let input2 = document.querySelector(".salario");
+
+
+function mostrarMensagem() {
+    let employee = input1.value;
+    let salary = parseFloat(input2.value);
+    
+    salary = salary.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+    let mensagem = document.querySelector(".mensagem");
+
+    mensagem.innerHTML = `O funcionário(a) ${employee} tem um salário de ${salary} em Junho.`
+    
+    input1.value = ""
+    input2.value = ""
+    
+}
+
+</script>
+</html>
