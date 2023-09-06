@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucessor e antecessor</title>
+</head>
+<body>
+    <div>
+        <h2> Faça um programa que leia um número inteiro e mostre o seu antecessor e seu
+            sucessor.</h2>
+
+        <div>
+            <input class="valor1" type="text" placeholder="Digite um número" >
+           
+           <button onClick="mostrarInteiro()">Enviar</button>
+        </div>
+
+        <p class="mensagem"></p>
+    </div>
+</body>
+
+<script>
+    /* Faça um programa que leia um número inteiro e mostre o seu antecessor e seu
+sucessor.
+Ex:
+Digite um número: 9
+O antecessor de 9 é 8
+O sucessor de 9 é 10
+*/
+
+let valor1 = document.querySelector(".valor1");
+
+
+function mostrarInteiro() {
+    let numberOne =  parseFloat(valor1.value);
+
+    let antecessor = numberOne - 1
+
+    let sucessor = numberOne + 1
+
+    let mensagem = document.querySelector('.mensagem')
+    mensagem.innerHTML = ` O antecessor de ${numberOne} é ${antecessor} </br>
+    O sucessor de ${numberOne} é ${sucessor}`
+
+    
+}
+
+</script>
+</html>
