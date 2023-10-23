@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura da parede</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medidas</title>
+    </head>
+
+    <body>
+        <div>
+
+            <h2>
+                Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o
+                seu novo salário, com 15% de aumento.
+            </h2>
+
+            <div>
+
+                <input class="valor1" type="number" placeholder="Digite o valor do seu salário" value="" />
+
+                <button onClick="calcularAumentoSalario()">Calcular salário com aumento</button>
+
+            </div>
+
+            <p>O valor do seu salário com 15% de aumento é: R$<span>..</span></p>
+            <p>Portanto você teve um aumento de: R$<span class="span2">..</span> de aumento</p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*  Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o 
+seu novo salário, com 15% de aumento..
+        
+        */
+
+        function calcularAumentoSalario() {
+
+            let valor1 = parseFloat(document.querySelector('.valor1').value);
+            let texto = document.querySelector('span');
+            let texto2 = document.querySelector('.span2');
+
+            let result = (15 / 100) * valor1
+            let preco = valor1 + result
+
+            texto.innerHTML = preco
+            texto2.innerHTML = result
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>

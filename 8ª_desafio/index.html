@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medidas</title>
+</head>
+
+<body>
+    <div>
+
+        <h2>
+            Desenvolva um programa que leia uma distância em metros e mostre os valores
+            relativos em outras medidas.
+        </h2>
+
+        <div>
+
+            <p>Digite uma distância em metros:</p>
+
+            <input class="valor1" type="number" placeholder="Digite a distância" value="" />
+
+            <button onClick="mudarMedida()">Mostrar medidas</button>
+
+        </div>
+
+        <p><span class="m">0.00</span>..m</p>
+        <p><span class="km">0.00</span>..Km</p>
+        <p><span class="hm">0.00</span>..hm</p>
+        <p><span class="dam">0.00</span>..dam</p>
+        <p><span class="dm">0.00</span>..dm</p>
+        <p><span class="cm">0.00</span>..cm</p>
+        <p><span class="mm">0.00</span>..mm</p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /*  Desenvolva um programa que leia uma distância em metros e mostre os valores 
+    relativos em outras medidas.
+    Ex: 
+    Digite uma distância em metros: 185.72
+    A distância de 185.7m corresponde a:
+    0.18572Km
+    1.8572Hm
+    18.572Dam
+    1857.2dm
+    18572.0cm
+    185720.0mm
+    
+    */
+
+    let valor = document.querySelector('.valor1')
+
+    let m = document.querySelector('.m')
+    let Km = document.querySelector('.km')
+    let Hm = document.querySelector('.hm')
+    let dam = document.querySelector('.dam')
+    let dm = document.querySelector('.dm')
+    let cm = document.querySelector('.cm')
+    let mm = document.querySelector('.mm')
+
+    function mudarMedida() {
+
+        let m = document.querySelector('.m')
+        let Km = document.querySelector('.km')
+        let Hm = document.querySelector('.hm')
+        let dam = document.querySelector('.dam')
+        let dm = document.querySelector('.dm')
+        let cm = document.querySelector('.cm')
+        let mm = document.querySelector('.mm')
+
+        let number = valor.value
+        
+        let metro = number
+        let kilometro = (number /1000).toFixed(4)
+        let hectometros = (number /100).toFixed(4)
+        let decametros = (number /10).toFixed(4)
+        let decimatros = (number * 10).toFixed(4)
+        let centimetros = (number * 100).toFixed(4)
+        let milimetros = (number * 1000).toFixed(3)
+
+
+        m.innerHTML = number
+        Km.innerHTML = kilometro
+        Hm.innerHTML = hectometros
+        dam.innerHTML = decametros
+        dm.innerHTML = decimatros
+        cm.innerHTML = centimetros
+        mm.innerHTML = milimetros
+
+        valor.value = " "
+
+    }
+
+</script>
+
+
+</html>

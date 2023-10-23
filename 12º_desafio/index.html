@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura da parede</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medidas</title>
+    </head>
+
+    <body>
+        <div>
+
+            <h2>
+                Crie um programa que leia o preço de um produto, calcule e mostre o seu 
+PREÇO PROMOCIONAL, com 5% de desconto.
+            </h2>
+
+            <div>
+
+                <p>Valor em Real $:</p>
+
+                <input class="valor1" type="number" placeholder="Digite o valor do produto" value="" />
+
+                <button onClick="calcularDesconto()">Calcular desconto</button>
+
+            </div>
+
+            <p>O valor do produto com 5% de desconto é: R$<span>..</span></p>
+            <p>Portanto você teve um valor de: R$<span class="span2">..</span> em desconto</p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*  Crie um programa que leia o preço de um produto, calcule e mostre o seu 
+PREÇO PROMOCIONAL, com 5% de desconto..
+        
+        */
+
+        function calcularDesconto() {
+            let valor1 = parseFloat(document.querySelector('.valor1').value);
+            let texto = document.querySelector('span');
+            let texto2 = document.querySelector('.span2');
+
+
+
+            let result = (5 / 100) * valor1
+            let preco = valor1 - result
+
+            texto.innerHTML = preco
+            texto2.innerHTML = result
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>

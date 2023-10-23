@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura da parede</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medidas</title>
+    </head>
+
+    <body>
+        <div>
+
+            <h2>
+                Faça um algoritmo que leia a largura e altura de uma parede, calcule e
+                mostre a área a ser pintada e a quantidade de tinta necessária para o serviço,
+                sabendo que cada litro de tinta pinta uma área de 2metros quadrados.
+            </h2>
+
+            <div>
+
+                <p>Valor em Real $:</p>
+
+                <input class="valor1" type="number" placeholder="Digite a largura da Sala" value="" />
+                <input class="valor2" type="number" placeholder="Digite a Altura da Sala" value="" />
+
+                <button onClick="calcularValor()">Calcular quantidade de tinta</button>
+
+            </div>
+
+            <p>A quantidade de latas de tinta é: <span>..</span></p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*  Faça um algoritmo que leia a largura e altura de uma parede, calcule e 
+mostre a área a ser pintada e a quantidade de tinta necessária para o serviço, 
+sabendo que cada litro de tinta pinta uma área de 2metros quadrados..
+        
+        */
+
+
+
+
+
+
+        function calcularValor() {
+            let valor1 = document.querySelector('.valor1').value
+            let valor2 = document.querySelector('.valor2').value
+            let texto = document.querySelector('span')
+            let tinta = 2
+            let result = valor1 * valor2 / tinta
+
+            texto.innerHTML = result
+            texto.style.color = 'green'
+            texto.style.fontWeight = 'bold'
+
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>

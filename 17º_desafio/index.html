@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Km Rodado</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medidas</title>
+    </head>
+
+    <body>
+        <div>
+
+            <h2>
+                Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse
+                80Km/h, exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba
+                o valor da multa, cobrando R$5 por cada Km acima da velocidade permitida.
+            </h2>
+
+            <div>
+
+                <input class="valor1" type="number" placeholder="Quantos Km/h você está?" value="" />
+
+                <button onClick="calcularMulta()">Calcular Multa</button>
+
+            </div>
+
+            <p class="p"> </p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*   Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse 
+80Km/h, exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba 
+o valor da multa, cobrando R$5 por cada Km acima da velocidade permitida.
+        
+        */
+
+        function calcularMulta() {
+
+            let valorKm = parseFloat(document.querySelector('.valor1').value);
+            let valorCadaKm = 5
+            let valorMulta = valorKm * valorCadaKm
+            let p = document.querySelector(".p")
+        
+
+            if (valorKm < 80){
+                
+                p.innerHTML = 'Tudo certo você esta na velocidade correta.'
+
+            } else {
+                let result = (valorKm - 80) * valorCadaKm
+                p.innerHTML = `Você recebeu uma multa de R$${result.toFixed(2)} por ter ultrapassado o limite de 80 km/h.`
+            }
+
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>

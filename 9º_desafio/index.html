@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medidas</title>
+</head>
+
+<body>
+    <div>
+
+        <h2>
+            Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$)
+            e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
+        </h2>
+
+        <div>
+
+            <p>Valor em Real $:</p>
+
+            <input class="valor1" type="number" placeholder="Digite o valor" value="" />
+
+            <button onClick="calcularValor()">Calcular em dólar</button>
+
+        </div>
+
+        <p>O valor de <span class="real">..</span> em real equivale à <span class="dolar">..</span> dólar</p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /*  Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$) 
+e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
+    
+    */
+
+    let valor = document.querySelector('.valor1')
+
+    
+
+
+    function calcularValor() {
+
+        let real = document.querySelector('.real')
+    let dolar = document.querySelector('.dolar')
+
+        money = valor.value
+
+        let Calcular = (money * 3.45).toFixed(2);
+
+        real.innerHTML = money
+        dolar.innerHTML = Calcular
+
+    }
+
+</script>
+
+
+</html>

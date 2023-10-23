@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura da parede</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medidas</title>
+    </head>
+
+    <body>
+        <div>
+
+            <h2>
+                Desenvolva uma lógica que leia os valores de A, B e C de uma equação do
+                segundo grau e mostre o valor de Delta.
+            </h2>
+
+            <div>
+
+                <p>Valor em Real $:</p>
+
+                <input class="valor1" type="number" placeholder="Digite o valor de A" value="" />
+                <input class="valor2" type="number" placeholder="Digite o valor de B" value="" />
+                <input class="valor3" type="number" placeholder="Digite o valor de C" value="" />
+
+                <button onClick="calcularDelta()">Calcular quantidade de tinta</button>
+
+            </div>
+
+            <p>O valor de delta é: <span>..</span></p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*  Desenvolva uma lógica que leia os valores de A, B e C de uma equação do 
+segundo grau e mostre o valor de Delta.
+        
+        */
+
+
+
+
+
+
+        function calcularDelta() {
+            let valor1 = parseFloat(document.querySelector('.valor1').value);
+            let valor2 = parseFloat(document.querySelector('.valor2').value);
+            let valor3 = parseFloat(document.querySelector('.valor3').value);
+            let texto = document.querySelector('span');
+
+            let delta = valor2**2 - 4 * valor1 * valor3;
+            let result = delta.toFixed(4);
+
+            texto.innerHTML = result
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>

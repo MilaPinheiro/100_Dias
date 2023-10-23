@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura da parede</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medidas</title>
+    </head>
+
+    <body>
+        <div>
+
+            <h2>
+                Crie um programa que leia o número de dias trabalhados em um mês e mostre o 
+                salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25 
+                por hora trabalhada.
+            </h2>
+
+            <div>
+
+                <input class="valor1" type="number" placeholder="Digite a quantidade de dias trabalhados" value="" />
+                
+                <button onClick="calcularValorTotal()">Calcular valor total de dias trabalhados</button>
+
+            </div>
+
+            <p>O valor total a ser pago pelo trabalho é: R$<span>..</span></p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*   Crie um programa que leia o número de dias trabalhados em um mês e mostre o 
+salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25 
+por hora trabalhada.
+        
+        */
+
+        function calcularValorTotal() {
+
+            let valor1 = parseFloat(document.querySelector('.valor1').value);
+            let texto = document.querySelector('span');
+
+            let valorHora = 25 
+            let horaDias = 8 
+
+            let quantidaDias = valor1 * horaDias
+
+            let result = quantidaDias * valorHora
+
+            texto.innerHTML = result
+
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>

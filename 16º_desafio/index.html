@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura da parede</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medidas</title>
+    </head>
+
+    <body>
+        <div>
+
+            <h2>
+                Escreva um programa para calcular a redução do tempo de vida de um 
+fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele 
+já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule 
+quantos dias de vida um fumante perderá e exiba o total em dias.
+            </h2>
+
+            <div>
+
+                <input class="valor1" type="number" placeholder="Digite quantos cigarros você fuma por dias?" value="" />
+                <input class="valor2" type="number" placeholder="Faz quantos anos que você fuma?" value="" />
+                
+                <button onClick="calcularVidaPerdida()">Calcular tempo de vida perdida</button>
+
+            </div>
+
+            <p>Você perdeu no total <span>..</span> dias de vida!</p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*   Escreva um programa para calcular a redução do tempo de vida de um 
+fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele 
+já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule 
+quantos dias de vida um fumante perderá e exiba o total em dias.
+        
+        */
+
+        function calcularVidaPerdida() {
+
+            let valor1 = parseFloat(document.querySelector('.valor1').value);
+            let valor2 = parseFloat(document.querySelector('.valor2').value);
+            let texto = document.querySelector('span');
+
+            let minPerdidoVida = 10
+            
+            let minPerdido = diaMin - minPerdidoVida
+            
+            let diasFumando = valor1 * minPerdidoVida
+            let anoFumando = diasFumando * anoDia
+
+            let result = anoFumando * valor2
+
+            let result2 = result - dia
+
+
+            texto.innerHTML = result2
+
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>
