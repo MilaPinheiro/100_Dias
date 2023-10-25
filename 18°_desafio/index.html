@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano de Nascimento</title>
+</head>
+
+    
+    <body>
+        <div>
+
+            <h2>
+                Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade 
+                dela e depois mostre se ela pode ou não votar.
+            </h2>
+
+            <div>
+
+                <input class="valor1" type="number" placeholder="Qual sua data de nascimento?" value="" />
+
+                <button onClick="calcularAnoDeNascimento()">EXIBIR</button>
+
+            </div>
+
+            <p class="p"></p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*     Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade 
+                dela e depois mostre se ela pode ou não votar.
+        */
+
+        function calcularAnoDeNascimento() {
+            let anoAtual = 2023
+            let anoNasc = document.querySelector('.valor1').value;
+            let p = document.querySelector('.p');
+
+            let result =  anoAtual - anoNasc
+            
+            if(result >= 18) {
+                p.innerHTML = 'Você pode votar!!!'
+
+            } else {
+                p.innerHTML = 'Você pode NÃO votar!!!'
+            }
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>
