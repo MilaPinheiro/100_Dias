@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAR OU IMPAR</title>
+</head>
+
+    
+    <body>
+        <div>
+
+            <h2>
+                Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou 
+                ÍMPAR.
+            </h2>
+
+            <div>
+
+                <input class="numeroInt" type="text" placeholder="Número inteiro" value="" />
+
+                <button onClick="calcularNumeroInteiro()">Número Inteiro</button>
+
+            </div>
+
+            <p class="p"></p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*       Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou 
+                ÍMPAR.
+        */
+
+        function calcularNumeroInteiro() {
+           
+            let numeroInt = parseInt(document.querySelector('.numeroInt').value);
+            let p = document.querySelector('.p')
+
+            if(numeroInt % 2 == 0) {
+                p.innerHTML = 'O número é PAR!'
+            } else {
+                p.innerHTML = 'O número é IMPAR!'
+            }
+          
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>
