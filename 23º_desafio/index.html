@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar descontos
+            para todos, mas especialmente para mulheres. Faça um programa que leia nome,
+            sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo
+            que:
+            - Homens ganham 5% de desconto
+            - Mulheres ganham 13% de desconto
+        </h2>
+
+        <div>
+
+            <input class="nome" type="text" placeholder="Digite seu nome" value="" />
+            <input class="sexo" type="text" placeholder="Digite seu sexo" value="" />
+            <input class="valor" type="number" placeholder="Digite o valor total das compras" value="" />
+
+            <button onClick="calcularNumeroInteiro()">Verificar situação de desconto</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /* Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar descontos 
+para todos, mas especialmente para mulheres. Faça um programa que leia nome, 
+sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo 
+que:
+ - Homens ganham 5% de desconto
+ - Mulheres ganham 13% de desconto
+
+    */
+
+    function calcularNumeroInteiro() {
+
+        let nome = document.querySelector('.nome').value;
+        let sexo = document.querySelector('.sexo').value;
+        let valor = document.querySelector('.valor').value;
+
+        let p = document.querySelector('.p')
+
+        let descontoM = (valor * 5) / 100
+        let resultM = valor - descontoM
+        let descontoF = (valor * 13) / 100
+        let resultF = valor - descontoF
+
+        if (sexo.toLowerCase() == "masculino") {
+            
+            p.innerHTML = `Parabéns ${nome} você teve um desconto de 5% portanto o valor da sua compra é ${resultM}`
+        }   
+
+        else{
+                    
+            p.innerHTML = `Parabéns ${nome} por ser dia das mulheres você teve um desconto de 13% portanto o valor da sua compra é ${resultF}`
+
+        } 
+
+    }
+
+</script>
+
+
+</html>
+</body>
+
+</html>

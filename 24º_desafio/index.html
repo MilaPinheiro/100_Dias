@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            Faça um algoritmo que pergunte a distância que um passageiro deseja 
+percorrer em Km. Calcule o preço da passagem, cobrando R$0.50 por Km para 
+viagens até 200Km e R$0.45 para viagens mais longas.
+        </h2>
+
+        <div>
+
+            <input class="valor" type="number" placeholder="Qual distância deseja percorrer?" value="" />
+            
+
+            <button onClick="calcularNumeroInteiro()">Verificar valor gasto no percusso</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /* Faça um algoritmo que pergunte a distância que um passageiro deseja 
+percorrer em Km. Calcule o preço da passagem, cobrando R$0.50 por Km para 
+viagens até 200Km e R$0.45 para viagens mais longas.
+
+    */
+
+    function calcularNumeroInteiro() {
+
+        let valor = document.querySelector('.valor').value;
+        let valorPecorrer = 0.50
+        let valorPecorrerMais = 0.45
+        
+
+        let p = document.querySelector('.p')
+
+
+        if (valor <= 200) {
+            let result = valor * valorPecorrer
+            p.innerHTML = `Você gastará R$${result.toFixed(2)} na sua viagem percorrendo ${valor}Km`
+        }   
+
+        else{
+            let result2 = valor * valorPecorrerMais      
+            p.innerHTML = `Você gastará R$${result2.toFixed(2)} na sua viagem percorrendo ${valor}Km`
+
+        } 
+
+    }
+
+</script>
+
+
+</html>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            Escreva um algoritmo que leia dois números inteiros e compare-os, mostrando
+            na tela uma das mensagens abaixo:
+            - O primeiro valor é o maior
+            - O segundo valor é o maior
+            - Não existe valor maior, os dois são iguais
+        </h2>
+
+        <div>
+
+            <input class="valor1" type="number" placeholder="Digite o 1º valor" value="" />
+            <input class="valor2" type="number" placeholder="Digite o 2º valor" value="" />
+
+            <button onClick="calcularNumeroInteiro()">Verificar valor</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /* Escreva um algoritmo que leia dois números inteiros e compare-os, mostrando 
+na tela uma das mensagens abaixo:
+ - O primeiro valor é o maior
+ - O segundo valor é o maior
+ - Não existe valor maior, os dois são iguais
+
+    */
+
+    function calcularNumeroInteiro() {
+
+        let valor1 = parseInt(document.querySelector('.valor1').value);
+        let valor2 = parseInt(document.querySelector('.valor2').value);
+        let p = document.querySelector('.p')
+
+        if (valor1 > valor2) {
+
+            p.innerHTML = 'O 1º valor é maior!!'
+        }
+
+        else if (valor2 > valor1) {
+            p.innerHTML = 'O 2º valor é maior!!'
+        } else {
+            p.innerHTML = 'Não existe valor maior, os dois são iguais!!'
+        }
+
+    }
+
+</script>
+
+
+</html>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua
+            situação em relação ao alistamento militar.
+            - Se estiver antes dos 18 anos, mostre em quantos anos faltam para o
+            alistamento.
+            - Se já tiver depois dos 18 anos, mostre quantos anos já se passaram do
+            alistamento.
+        </h2>
+
+        <div>
+
+            <input class="numeroInt" type="text" placeholder="Digite sua idade" value="" />
+
+            <button onClick="calcularNumeroInteiro()">Verificar Alistamento</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /* Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua 
+situação em relação ao alistamento militar.
+- Se estiver antes dos 18 anos, mostre em quantos anos faltam para o 
+alistamento.
+- Se já tiver depois dos 18 anos, mostre quantos anos já se passaram do 
+alistamento.
+
+    */
+
+    function calcularNumeroInteiro() {
+
+        let numeroInt = parseInt(document.querySelector('.numeroInt').value);
+        let p = document.querySelector('.p')
+
+        let idadeAlistamento = 18
+
+        if (numeroInt > idadeAlistamento) {
+            let result =  numeroInt - idadeAlistamento
+            p.innerHTML = `Você passou ${result} anos da data de alistamento`
+        }
+
+        else if (numeroInt == idadeAlistamento) {
+            
+            p.innerHTML = 'Você já pode se alistar'
+
+        } else {
+
+            let result =  idadeAlistamento - numeroInt
+            p.innerHTML = `Ainda falta ${result} anos para seu alistamento`
+        }
+
+    }
+
+</script>
+
+
+</html>
+</body>
+
+</html>

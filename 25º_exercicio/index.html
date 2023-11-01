@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            [DESAFIO] Crie um programa que leia o tamanho de três segmentos de reta. 
+            Analise seus comprimentos e diga se é possível formar um triângulo com essas 
+            retas. Matematicamente, para três segmentos formarem um triângulo, o comprimento 
+            de cada lado deve ser menor que a soma dos outros dois.
+        </h2>
+
+        <div>
+
+            <input class="valor1" type="number" placeholder="Segmento da 1º reta?" value="" />
+            <input class="valor2" type="number" placeholder="Segmento da 2 reta?" value="" />
+            <input class="valor3" type="number" placeholder="Segmento da 3º reta?" value="" />
+
+
+            <button onClick="calcularNumeroInteiro()">Verificar valor gasto no percusso</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /*  [DESAFIO] Crie um programa que leia o tamanho de três segmentos de reta. 
+Analise seus comprimentos e diga se é possível formar um triângulo com essas 
+retas. Matematicamente, para três segmentos formarem um triângulo, o comprimento 
+de cada lado deve ser menor que a soma dos outros dois.
+
+    */
+
+    function calcularNumeroInteiro() {
+
+        let valor1 = Number(document.querySelector('.valor1').value);
+            let valor2 = Number(document.querySelector('.valor2').value);
+            let valor3 = Number(document.querySelector('.valor3').value);
+        
+        let valorSum = valor1 + valor2
+        let valorSum2 = valor1 + valor3
+        let valorSum3 = valor2 + valor3
+
+        
+
+
+
+        let p = document.querySelector('.p')
+
+
+        if (valorSum > valor3 && valorSum2 > valor2 && valorSum3 > valor1) {
+            
+            p.innerHTML = 'Poder fazer seu triângulo'
+        }
+
+        else {
+        
+            p.innerHTML = 'Não pode fazer seu triângulo cai fora otário'
+
+        }
+
+    }
+
+</script>
+
+
+</html>
+</body>
+
+</html>

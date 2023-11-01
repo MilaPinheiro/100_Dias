@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano BISSEXTO</title>
+</head>
+
+    
+    <body>
+        <div>
+
+            <h2>
+                Faça um algoritmo que leia um determinado ano e mostre se ele é ou não 
+BISSEXTO.
+            </h2>
+
+            <div>
+
+                <input class="numeroInt" type="text" placeholder="Digite o Ano" value="" />
+
+                <button onClick="calcularNumeroInteiro()">Verificar Ano</button>
+
+            </div>
+
+            <p class="p"></p>
+
+        </div>
+    </body>
+
+    <script>
+
+
+        /*       Faça um algoritmo que leia um determinado ano e mostre se ele é ou não 
+BISSEXTO.
+        */
+
+        function calcularNumeroInteiro() {
+           
+            let numeroInt = parseInt(document.querySelector('.numeroInt').value);
+            let p = document.querySelector('.p')
+
+            if(numeroInt % 4 == 0) {
+                p.innerHTML = 'Esse ano é BISSEXTO'
+            } else {
+                p.innerHTML = 'Esse ano NÃO é BISSEXTO'
+            }
+          
+        }
+
+    </script>
+
+
+    </html>
+</body>
+
+</html>
