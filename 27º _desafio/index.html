@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            Crie um programa que leia duas notas de um aluno e calcule a sua média, 
+            mostrando uma mensagem no final, de acordo com a média atingida:
+            - Média até 4.9: REPROVADO
+            - Média entre 5.0 e 6.9: RECUPERAÇÃO
+            - Média 7.0 ou superior: APROVADO
+        </h2>
+
+        <div>
+
+            <input class="valor1" type="number" placeholder="Digite o 1º valor" value="" />
+            <input class="valor2" type="number" placeholder="Digite o 2º valor" value="" />
+
+            <button onClick="calcularMédia()">Média</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /*   Crie um programa que leia duas notas de um aluno e calcule a sua média, 
+            mostrando uma mensagem no final, de acordo com a média atingida:
+            - Média até 4.9: REPROVADO
+            - Média entre 5.0 e 6.9: RECUPERAÇÃO
+            - Média 7.0 ou superior: APROVADO
+
+    */
+
+    function calcularMédia() {
+
+        let valor1 = Number(document.querySelector('.valor1').value);
+        let valor2 = Number(document.querySelector('.valor2').value);
+        let p = document.querySelector('.p')
+
+        mediaFinal = (valor1 + valor2) / 2
+        
+        console.log(mediaFinal)
+
+        if (mediaFinal >= 7) {
+            p.innerHTML = 'APROVADO!'
+        }
+        else if (mediaFinal >= 5 || mediaFinal <= 6.9) {
+            p.innerHTML = 'RECUPERAÇÃO!'
+
+        } else {
+            p.innerHTML = 'REPROVADO!!!'
+        }
+        
+
+    }
+
+</script>
+ 
+
+</html>
+</body>
+
+</html>

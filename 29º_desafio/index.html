@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salário</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            Desenvolva um programa que leia o nome de um funcionário, seu salário, 
+            quantos anos ele trabalha na empresa e mostre seu novo salário, reajustado de 
+            acordo com a tabela a seguir:
+             - Até 3 anos de empresa: aumento de 3%
+             - entre 3 e 10 anos: aumento de 12.5%
+             - 10 anos ou mais: aumento de 20%
+        </h2>
+
+        <div>
+
+            <input class="nome" type="text" placeholder="Digite seu nome" value="" />
+            <input class="valor1" type="number" placeholder="Digite seu salário" value="" />
+            <input class="valor2" type="number" placeholder="Quantos anos trabalha na empresa?" value="" />
+
+            <button onClick="calcularReajusteSalario()">Seu reajuste é...</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /*  Desenvolva um programa que leia o nome de um funcionário, seu salário, 
+        quantos anos ele trabalha na empresa e mostre seu novo salário, reajustado de 
+        acordo com a tabela a seguir:
+        - Até 3 anos de empresa: aumento de 3%
+        - entre 3 e 10 anos: aumento de 12.5%
+        - 10 anos ou mais: aumento de 20%
+
+    */
+
+    function calcularReajusteSalario() {
+
+        let nome = document.querySelector('.nome').value;
+        let valor1 = Number(document.querySelector('.valor1').value);
+        let valor2 = Number(document.querySelector('.valor2').value);
+        let p = document.querySelector('.p')
+
+
+        if (valor2 <= 3) {
+            let total = (valor1 * 3) / 100
+            p.innerHTML = `${nome} você recebeu R$ ${total} de aumento`
+        }
+        else if (valor2 >= 3 && valor2 < 10) {
+            let total2 = (valor1 * 12.5) / 100
+            p.innerHTML = `${nome} você recebeu R$ ${total2} de aumento`
+        }
+        else if (valor2 >= 10) {
+            let total3 = (valor1 * 20) / 100
+            console.log(total3)
+            p.innerHTML = `${nome} você recebeu R$ ${total3} de aumento`
+        }
+    }
+
+</script>
+ 
+
+</html>
+</body>
+
+</html>

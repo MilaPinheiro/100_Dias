@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura e comprimento do terreno</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            Faça um programa que leia a largura e o comprimento de um terreno 
+            retangular, calculando e mostrando a sua área em m². O programa também 
+            devemostrar a classificação desse terreno, de acordo com a lista abaixo:
+            - Abaixo de 100m² = TERRENO POPULAR
+            - Entre 100m² e 500m² = TERRENO MASTER
+            - Acima de 500m² = TERRENO VIP
+        </h2>
+
+        <div>
+
+            <input class="valor1" type="number" placeholder="Digite a largura" value="" />
+            <input class="valor2" type="number" placeholder="Digite o comprimento" value="" />
+
+            <button onClick="calcularTerrenoRetangular()">aréa em m²</button>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /*   Faça um programa que leia a largura e o comprimento de um terreno 
+            retangular, calculando e mostrando a sua área em m². O programa também 
+            deve mostrar a classificação desse terreno, de acordo com a lista abaixo:
+            - Abaixo de 100m² = TERRENO POPULAR
+            - Entre 100m² e 500m² = TERRENO MASTER
+            - Acima de 500m² = TERRENO VIP
+
+    */
+
+    function calcularTerrenoRetangular() {
+
+        let valor1 = Number(document.querySelector('.valor1').value);
+        let valor2 = Number(document.querySelector('.valor2').value);
+        let p = document.querySelector('.p')
+
+
+        terrenoRetangular = valor1 * valor2
+       
+
+        if (terrenoRetangular < 100) {
+            p.innerHTML = 'TERRENO POPULAR'
+        }
+        else if (terrenoRetangular >= 100 && terrenoRetangular <=500) {
+            p.innerHTML = 'TERRENO MASTER'
+        }
+        else {
+            p.innerHTML = 'TERRENO VIP'
+        }
+    }
+
+</script>
+ 
+
+</html>
+</body>
+
+</html>
