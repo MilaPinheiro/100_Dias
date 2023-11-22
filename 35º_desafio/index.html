@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vida Saúdavel</title>
+  </head>
+
+  <body>
+    <div width="100%">
+      <h2>
+        Um programa de vida saudável quer dar pontos atividades físicas que
+        podem ser trocados por dinheiro. O sistema funciona assim: - Cada hora
+        de atividade física no mês vale pontos - até 10h de atividade no mês:
+        ganha 2 pontos por hora - de 10h até 20h de atividade no mês: ganha 5
+        pontos por hora - acima de 20h de atividade no mês: ganha 10 pontos por
+        hora - A cada ponto ganho, o cliente fatura R$0,05 (5 centavos) Faça um
+        programa que leia quantas horas de atividade uma pessoa teve por mês,
+        calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu
+        ganhar.
+      </h2>
+      <div style="border: 1px solid red">
+        <p></p>
+        <p></p>
+        <div>
+          <input
+            class="atividadeMes"
+            type="text"
+            placeholder="Quantas horas de atividade por mês?"
+            value=""
+          />
+
+          <button class="verificar" onclick="calcularVidaSaudavel()">
+            Calcular Pontos
+          </button>
+        </div>
+      </div>
+      <p class="p"></p>
+    </div>
+
+    <script>
+
+
+      /* Um programa de vida saudável quer dar pontos atividades físicas que podem
+      ser trocados por dinheiro. O sistema funciona assim:
+      - Cada hora de atividade física no mês vale pontos
+      - até 10h de atividade no mês: ganha 2 pontos por hora
+      - de 10h até 20h de atividade no mês: ganha 5 pontos por hora
+      - acima de 20h de atividade no mês: ganha 10 pontos por hora
+      - A cada ponto ganho, o cliente fatura R$0,05 (5 centavos)
+      Faça um programa que leia quantas horas de atividade uma pessoa teve por mês,
+      calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu ganhar.*/
+
+
+
+        const calcularVidaSaudavel = () => {
+
+            const atividadeMes = Number(document.querySelector('.atividadeMes').value)
+
+            const ateDez = 2
+            const entreDezVinte = 5
+            const acimaDeVinte = 10
+            const p = document.querySelector('.p')
+    
+          if(atividadeMes < 10) {
+              const soma =  atividadeMes * ateDez
+              const result = soma * 0.05
+              p.innerHTML= `Você ganhou ${soma} pontos e R$${result} dinheiro`
+          } else if (atividadeMes >= 10 && atividadeMes <= 20) {
+              const soma =  atividadeMes * entreDezVinte
+              const result1 = soma * 0.05
+              p.innerHTML= `Você ganhou ${soma} pontos e R$${result1} dinheiro`
+          }else {
+              const soma =  atividadeMes * acimaDeVinte
+              const result2 = soma * 0.05
+              p.innerHTML= `Você ganhou ${soma} pontos e R$${result2} dinheiro`
+          }
+
+      }
+    </script>
+  </body>
+</html>

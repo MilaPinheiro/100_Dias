@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+<body>
+    <div width="100%">
+        <h2>
+            O Índice de Massa Corpórea (IMC) é um valor calculado baseado na altura e no
+            peso de uma pessoa. De acordo com o valor do IMC, podemos classificar o
+            indivíduo dentro de certas faixas.
+            - abaixo de 18.5: Abaixo do peso
+            - entre 18.5 e 25: Peso ideal
+            - entre 25 e 30: Sobrepeso
+            - entre 30 e 40: Obesidade
+            - acima de 40: Obseidade mórbida
+        </h2>
+        <div style="border:1px solid red">
+            <p>Calcule do IMC</p>
+            <div>
+                <input class="altura" type="number" placeholder="Qual a sua altura?" value="">
+                <input class="peso" type="number" placeholder="Qual o seu peso?" value="">
+
+                <button class="verificar" onclick="calcularImc()"> Verificar </button>
+            </div>
+        </div>
+        <p class="p"></p>
+    </div>
+
+    <script>
+        /*O Índice de Massa Corpórea (IMC) é um valor calculado baseado na altura e no
+               peso de uma pessoa. De acordo com o valor do IMC, podemos classificar o
+               indivíduo dentro de certas faixas.
+               - abaixo de 18.5: Abaixo do peso
+               - entre 18.5 e 25: Peso ideal
+               - entre 25 e 30: Sobrepeso
+               - entre 30 e 40: Obesidade
+               - acima de 40: Obseidade mórbida */
+
+
+
+
+        let calcularImc = () => {
+
+            let altura = document.querySelector('.altura').value
+            let peso = document.querySelector('.peso').value
+            let imc =  peso / (altura * altura)
+            let p = document.querySelector('.p')
+
+            if(imc < 18.5){
+               p.innerHTML = `Seu IMC é ${imc.toFixed(2)} você está abaixo do peso, va comer!`
+            } else if(imc >= 18.5 && imc < 25 ){
+                p.innerHTML = `Seu IMC é ${imc.toFixed(2)} você está com o peso ideal parabéns`
+            } else if(imc >= 25 && imc < 30 ){
+                p.innerHTML = `Seu IMC é ${imc.toFixed(2)} você está com sobre peso cuidado, malhe!!`
+            } else if(imc >= 30 && imc < 40 ){
+                p.innerHTML = `Seu IMC é ${imc.toFixed(2)} você está com obsidade, corra no médico, mas corra de vagar!!`
+            } else{
+                p.innerHTML = `Seu IMC é ${imc.toFixed(2)} você está com obsidade mórbida, fosse você começaria a rezar!!`
+            }
+
+            console.log(imc.toFixed(2))
+        }
+
+
+    </script>
+</body>
+
+</html>

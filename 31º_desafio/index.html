@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triângulo</title>
+</head>
+
+
+<body>
+    <div>
+
+        <h2>
+            [DESAFIO] Crie um jogo de JoKenPo (Pedra-Papel-Tesoura)
+        </h2>
+
+        <div>
+            <input class="pedra" onclick="calcularNumeroInteiro('pedra')" type="button" value="pedra" />
+            <input class="papel" onclick="calcularNumeroInteiro('papel')" type="button" value="papel" />
+            <input class="tesoura" onclick="calcularNumeroInteiro('tesoura')" type="button" value="tesoura" />
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<script>
+
+
+    /*  [DESAFIO] Crie um jogo de JoKenPo (Pedra-Papel-Tesoura)
+
+    */
+
+
+    let p = document.querySelector('.p')
+
+    let nome = [
+        document.querySelector('.pedra').value,
+        document.querySelector('.papel').value,
+        document.querySelector('.tesoura').value
+    ]
+
+    function calcularNumeroInteiro(hum) {
+
+        let maquina = Math.floor(Math.random() * 3);
+
+        console.log(nome[maquina])
+        
+
+        if (
+
+            hum === 'papel' && nome[maquina] === 'pedra' /* false */ ||
+            hum === 'pedra' && nome[maquina] === 'tesoura' /* true*/ ||
+            hum === 'tesoura' && nome[maquina] === 'papel' /*false*/) {
+
+            p.innerHTML = " Você ganhou"
+
+        }
+
+        else if (hum === nome[maquina]) {
+
+            p.innerHTML = "Você empatou"
+
+        } else {
+            p.innerHTML = "Maquina ganhou"
+        }
+    }
+
+    // pedra => tesoura => papel => pedra
+
+</script>
+
+
+</html>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Sorteio Number</title>
+</head>
+
+
+<body>
+    <div width="100%">
+
+        <h2>
+            [DESAFIO] Crie um jogo onde o computador vai sortear um número entre 1 e 5 o
+            jogador vai tentar descobrir qual foi o valor sorteado.
+
+        </h2>
+
+        <div style="border:1px solid red">
+            <p>Clique no botão para sortear um número de 0 a 5</p>
+            <div style="display: flex">
+                <button class="pedra" onclick="calcularNumeroInteiro()"> Clicar </button>
+                <input style="width: 50%" class="input" type="text"
+                    placeholder="Qual será o valor sorteado?" value=" " >
+                <button class="verificar" onclick="verificNumber()"> Verificar </button>
+            </div>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+</body>
+
+<style>
+   
+
+</style>
+
+<script>
+
+
+    /*  [DESAFIO] Crie um jogo onde o computador vai sortear um número entre 1 e 5 o 
+jogador vai tentar descobrir qual foi o valor sorteado.
+
+
+    */
+    
+    let botao = document.querySelector('.pedra')
+    let verificar = document.querySelector('.verificar')
+    let p = document.querySelector('.p')
+
+    function calcularNumeroInteiro() {
+        let input = document.querySelector('.input').value
+        verificar.style.display = "block"
+        input.disabled = "true"
+        let maquina = Math.floor(Math.random() * 6);
+        return maquina
+    }
+
+    function verificNumber() {
+        let input = document.querySelector('.input').value
+        let maquina2 = calcularNumeroInteiro()
+       
+        botao.disabled = 'false'
+
+        if (input == maquina2) {
+            p.innerHTML = `Você acertou parabéns a maquina também colocou ${maquina2} e vc colocou ${input} `
+        } else {
+            p.innerHTML = `Você errou a maquina colocou ${maquina2} e vc colocou ${input}`
+        } 
+    }
+
+
+
+</script>
+
+
+</html>
+</body>
+
+</html>

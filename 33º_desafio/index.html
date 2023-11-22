@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Sorteio Number</title>
+</head>
+
+<body>
+    <div width="100%">
+        <h2>
+            Escreva um programa para aprovar ou não o empréstimo bancário para a compra
+            de uma casa. O programa vai perguntar o valor da casa, o salário do comprador e
+            em quantos anos ele vai pagar. Calcule o valor da prestação mensal, sabendo que
+            ela não pode exceder 30% do salário ou então o empréstimo será negado.
+        </h2>
+        <div style="border:1px solid red">
+            <p>Calcule o valor da prestação mensal</p>
+            <div>
+                <input class="input1" type="text" placeholder="Qual valor da casa?" value="" oninput="formatarMoeda(this)">
+                <input class="input2" type="text" placeholder="Qual o seu salário?" value="" oninput="formatarMoeda(this)">
+                <input class="input3" type="number" placeholder="Em quantos anos você quer pagar?" style="width: 30%;">
+                <button class="verificar" onclick="verificNumber()"> Verificar </button>
+            </div>
+        </div>
+        <p class="p"></p>
+    </div>
+
+    <script>
+        function formatarMoeda(input) {
+            // Remove todos os caracteres que não são números, exceto a vírgula
+            let valor = input.value.replace(/\D/g, '');
+
+            // Formata o valor para o formato de moeda brasileira
+            input.value = (parseFloat(valor) / 100).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+        }
+
+        let verificNumber = () => {
+            let valorCasaInput = document.querySelector('.input1').value;
+            let valorSalarioInput = document.querySelector('.input2').value;
+
+            // Remove caracteres não numéricos para converter para número
+            let valorCasa = parseFloat(valorCasaInput.replace(/\D/g, ''));
+            let valorSalario = parseFloat(valorSalarioInput.replace(/\D/g, ''));
+
+            let valorAno = Number(document.querySelector('.input3').value); //30
+
+            let p = document.querySelector('.p')
+
+            let sumMeses = valorAno * 12
+            let valoPorcentagem = valorSalario * 30 / 100
+            let sumParcela = valorCasa / sumMeses
+
+            if (sumParcela <= valoPorcentagem) {
+                p.innerHTML = `Você pode comprar sua casa`
+            } else {
+                p.innerHTML = `Você não pode comprar sua casa sua parcela ultrapassa 30% do seu salário`
+            }
+
+            console.log(sumParcela, valoPorcentagem)
+        }
+    </script>
+</body>
+
+</html>
