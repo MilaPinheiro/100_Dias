@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reajuste do salário</title>
+  </head>
+
+  <body>
+    <div width="100%">
+      <h2>
+        Uma empresa precisa reajustar o salário dos seus funcionários, dando um 
+        aumento de acordo com alguns fatores. Faça um programa que leia o salário atual, 
+        o gênero do funcionário e há quantos anos esse funcionário trabalha na empresa. 
+        No final, mostre o seu novo salário, baseado na tabela a seguir:
+        - Mulheres
+         - menos de 15 anos de empresa: +5%
+         - de 15 até 20 anos de empresa: +12%
+         - mais de 20 anos de empresa: +23%
+        - Homens
+         - menos de 20 anos de empresa: +3%
+         - de 20 até 30 anos de empresa: +13%
+         - mais de 30 anos de empresa: +25%
+        
+      </h2>
+      <div style="border: 1px solid red">
+        <p></p>
+        <p></p>
+        <div>
+          <input
+            class="salarioAtual"
+            type="text"
+            placeholder="Qual seu salário atual?"
+            value=""
+          />
+          <input
+          class="genero"
+          type="text"
+          placeholder="Qual seu gênero?"
+          value=""
+        />
+        <input
+        class="quantidadeAnosTrabalhado"
+        type="text"
+        placeholder="Quantas anos trabalha na empresa?"
+        value=""
+      />
+
+          <button class="verificar" onclick="reajusteSalario()">
+            Verificar
+          </button>
+        </div>
+      </div>
+      <p class="p"></p>
+    </div>
+
+    <script>
+
+        const reajusteSalario = () => {
+
+            const  salarioAtual = Number(document.querySelector('.salarioAtual').value)
+            const  genero = document.querySelector('.genero').value
+            const  quantidadeAnosTrabalhado = Number(document.querySelector('.quantidadeAnosTrabalhado').value)
+            
+        
+            const p = document.querySelector('.p')
+    
+            if(genero === "mulher" && quantidadeAnosTrabalhado < 15) {
+              let result = salarioAtual * 5 / 100
+              p.innerHTML = `Você ganhou um aumento de 5% no valor de R${result.toFixed(2)}`
+            } else if (genero === "mulher" && quantidadeAnosTrabalhado === 15 && quantidadeAnosTrabalhado <= 20){
+              let result1 = salarioAtual * 12 / 100
+              p.innerHTML = `Você ganhou um aumento de 12% no valor de R${result1.toFixed(2)}`
+            } else if (genero === "mulher" && quantidadeAnosTrabalhado > 20) {
+              let result2 = salarioAtual * 23 / 100
+              p.innerHTML = `Você ganhou um aumento de 23% no valor de R${result2.toFixed(2)}`
+            } else if (genero === "homem" && quantidadeAnosTrabalhado < 20) {
+              let soma = salarioAtual * 3 / 100
+              p.innerHTML = `Você ganhou um aumento de 3% no valor de R${soma.toFixed(2)}`
+            } else if (genero === "homem" && quantidadeAnosTrabalhado >= 20 && quantidadeAnosTrabalhado <= 30){
+              let soma1 = salarioAtual * 13 / 100
+              p.innerHTML = `Você ganhou um aumento de 13% no valor de R${soma1.toFixed(2)}`
+            } else {
+              let soma2 = salarioAtual * 25 / 100
+              p.innerHTML = `Você ganhou um aumento de 25% no valor de R${soma2.toFixed(2)}`
+            }
+
+      }
+    </script>
+  </body>
+</html>
