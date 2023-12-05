@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem</title>
+</head>
+
+<body>
+    <div width="100%">
+        <h2>
+            Crie um programa que calcule e mostre na tela o resultado da soma entre 6 +
+            8 + 10 + 12 + 14 + ... + 98 + 100.
+        </h2>
+
+        <button onclick="calcularSomaSequencia()">Chama função</button>
+        <p class="p"></p>
+
+    </div>
+
+    <script>
+
+        function calcularSomaSequencia() {
+
+            let sum = 6
+
+
+           for (let i = 6; i <= 100; i+=2) {
+            
+              sum+=i
+
+              console.log('aqui é I ' + i)
+
+              console.log('aqui é Sum ' + sum)
+            
+           }
+
+            return sum
+
+        }
+
+        console.log(calcularSomaSequencia())            
+
+    </script>
+</body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem</title>
+</head>
+
+<body>
+    <div width="100%">
+        <h2>
+            Faça um programa que leia 7 números inteiros e no final mostre o somatório 
+            entre eles.
+        </h2>
+        <input type="number" class="input1"  placeholder="Digite o 1 número">
+        <input type="number" class="input2" placeholder="Digite o 2 número">
+        <input type="number" class="input3" placeholder="Digite o 3 número">
+        <input type="number" class="input4" placeholder="Digite o 4 número">
+        <input type="number" class="input5" placeholder="Digite o 5 número">
+        <input type="number" class="input6" placeholder="Digite o 6 número">
+        <input type="number" class="input7" placeholder="Digite o 7 número">
+        <button onclick="calcularSomaSequencia()">Chama função</button>
+        <p class="p">Somátorio é ...</p>
+
+    </div>
+
+    <script>
+
+        function calcularSomaSequencia() {
+
+          const input1 = Number(document.querySelector('.input1').value)
+          const input2 = Number(document.querySelector('.input2').value)
+          const input3 = Number(document.querySelector('.input3').value)
+          const input4 = Number(document.querySelector('.input4').value)
+          const input5 = Number(document.querySelector('.input5').value)
+          const input6 = Number(document.querySelector('.input6').value)
+          const input7 = Number(document.querySelector('.input7').value)
+          const p = document.querySelector('.p')
+
+            const  result = input1 + input2 + input3 + input4 + input5 + input6 + input7
+            p.innerHTML = result
+           
+
+
+        }
+
+                
+
+    </script>
+</body>

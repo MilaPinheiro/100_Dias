@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contagem</title>
+</head>
+
+<body>
+  <div width="100%">
+    <h2>
+      Faça um algoritmo que pergunte ao usuário um número inteiro e positivo qualquer e mostre uma contagem até esse valor:
+      Ex: Digite um valor: 35
+      Contagem: 1 2 3 4 5 6 7 ... 33 34 35 Acabou!
+    </h2>
+
+    <input class="input" type="number" placeholder="Digite um número inteiro positivo">
+    <button onclick="contagem()">Chama função</button>
+    <p class="p"></p>
+
+  </div>
+
+  <script>
+    const contagem = () => {
+      let input = parseInt(document.querySelector('.input').value)
+      let number = 0
+      let p = document.querySelector('.p')
+      let resultado = '' // Cria uma string vazia para armazenar os números
+
+      while (input > number) {
+        number += 1
+        console.log(number)
+
+        // Concatena o número atual à string resultado, com um espaço
+        resultado += `${number} `
+      }
+
+      // Exibe a string completa na tela após o término do loop
+      p.innerHTML = `Contagem: ${resultado}Acabou!`
+    }
+  </script>
+</body>

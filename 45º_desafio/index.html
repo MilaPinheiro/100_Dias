@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem</title>
+</head>
+
+<body>
+    <div width="100%">
+        <h2>
+            O programa acima vai ter um problema quando digitarmos o primeiro valor
+            maior que o último. Resolva esse problema com um código que funcione em qualquer
+            situação.
+        </h2>
+
+        <input class="input1" type="number" placeholder="Digite o primeiro número" value="">
+        <input class="input2" type="number" placeholder="Digite o último número" value="">
+        <input class="input3" type="number" placeholder="Digite o incremento" value="">
+
+        <button onclick="contagem()">Chama função</button>
+        <p class="p"></p>
+
+    </div>
+
+    <script>
+        const contagem = () => {
+
+            let input1 = Number(document.querySelector('.input1').value) // 3
+            let input2 = Number(document.querySelector('.input2').value) // 10
+            let input3 = Number(document.querySelector('.input3').value) // 2
+
+
+            while (input1 > input2) {
+
+                console.log(`${input1} decremento`)          
+                input1 = input1 - input3               
+
+            }
+
+            
+
+            while (input1 < input2) {
+
+                console.log(`${input1} incremento`)
+                input1 = input1 + input3
+                              
+
+            }
+
+            console.log(`Acabou`)
+        }
+    </script>
+</body>
