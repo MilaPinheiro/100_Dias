@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem</title>
+</head>
+
+<body>
+    <div width="100%">
+        <h2>
+            Desenvolva um programa que faça o sorteio de 20 números entre 0 e 10 e
+            mostre na tela:
+            a) Quais foram os números sorteados
+            b) Quantos números estão acima de 5
+            c) Quantos números são divisíveis por 3
+        </h2>
+
+        <p class="p"></p>
+        <p class="p1"></p>
+        <p class="p2"></p>
+    </div>
+
+    <script>
+
+        function calcularSomaSequencia() {
+
+            let contagem = []
+            let nmuber = 0
+            let p = document.querySelector('.p')
+            let p1 = document.querySelector('.p1')
+            let p2 = document.querySelector('.p2')
+
+            for (let index = 40; index > contagem.length; index--) {
+
+                let sorteio = Math.floor(Math.random() * 11);
+
+                contagem.push(sorteio)
+
+                p2.innerHTML = `Os números sorteados foram: ${sorteio}`
+
+            }
+
+            let numerosSorteados = "Os números sorteados foram: ";
+
+            for (let i = 0; i < contagem.length; i++) {
+                numerosSorteados += contagem[i];
+                if (i !== contagem.length - 1) {
+                    numerosSorteados += ", ";
+                }
+            }
+
+            const novoAry = contagem.filter(item => {
+                if (item > 5) {
+                    return true
+                } else {
+                    false
+                }
+            })
+
+            const novoAry2 = contagem.filter(item => {
+                if (item % 3 == 0) {
+                    return true
+                } else {
+                    false
+                }
+            })
+
+            p.innerHTML = numerosSorteados;
+            p1.innerHTML = `A quantidade de números maiores que 5 foram: ${novoAry.length}`
+            p2.innerHTML = `A quantidade de números divisíveis por 3 foram: ${novoAry2.length}`
+        }
+
+        calcularSomaSequencia()
+
+    </script>
+</body>

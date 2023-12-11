@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem</title>
+  </head>
+
+  <body>
+    <div width="100%">
+      <h2>
+        Desenvolva um aplicativo que leia o peso e a altura de 7 pessoas,
+        mostrando no final: a) Qual foi a média de altura do grupo b) Quantas
+        pessoas pesam mais de 90Kg c) Quantas pessoas que pesam menos de 50Kg
+        tem menos de 1.60m d) Quantas pessoas que medem mais de 1.90m pesam mais
+        de 100Kg.
+      </h2>
+
+      <label for="">
+        1º Pessoa
+        <input class="peso1" type="number" placeholder="peso 01" />
+        <input
+          class="altura1"
+          type="text"
+          placeholder="Digite sua altura"
+        /> </label
+      ><br />
+      <label for="">
+        2º Pessoa
+        <input class="peso2" type="number" placeholder="peso 02" />
+        <input
+          class="altura2"
+          type="text"
+          placeholder="Digite sua altura"
+        /> </label
+      ><br />
+      <label for="">
+        3º Pessoa
+        <input class="peso3" type="number" placeholder="peso 03" />
+        <input
+          class="altura3"
+          type="text"
+          placeholder="Digite sua altura"
+        /> </label
+      ><br />
+      <label for="">
+        4º Pessoa
+        <input class="peso4" type="number" placeholder="peso 04" />
+        <input
+          class="altura4"
+          type="text"
+          placeholder="Digite sua altura"
+        /> </label
+      ><br />
+      <label for="">
+        5º Pessoa
+        <input class="peso5" type="number" placeholder="peso 05" />
+        <input
+          class="altura5"
+          type="text"
+          placeholder="Digite sua altura"
+        /> </label
+      ><br />
+      <label for="">
+        6º Pessoa
+        <input class="peso6" type="number" placeholder="peso 06" />
+        <input
+          class="altura6"
+          type="text"
+          placeholder="Digite sua altura"
+        /> </label
+      ><br />
+      <label for="">
+        7º Pessoa
+        <input class="peso7" type="number" placeholder="peso 07" />
+        <input
+          class="altura7"
+          type="text"
+          placeholder="Digite sua altura"
+        /> </label
+      ><br />
+      <button onclick="calculoPeso()">Chama Função</button>
+
+      <p class="p"></p>
+      <p class="p1"></p>
+      <p class="p2"></p>
+      <p class="p3"></p>
+      <p class="p4"></p>
+    </div>
+
+    <script>
+
+      function calculoPeso(){
+
+          let peso1 = document.querySelector('.peso1').value
+          let peso2 = document.querySelector('.peso2').value
+          let peso3 = document.querySelector('.peso3').value
+          let peso4 = document.querySelector('.peso4').value
+          let peso5 = document.querySelector('.peso5').value
+          let peso6 = document.querySelector('.peso6').value
+          let peso7 = document.querySelector('.peso7').value
+
+
+
+          let altura1 = Number(document.querySelector('.altura1').value)
+          let altura2 = Number(document.querySelector('.altura2').value)
+          let altura3 = Number(document.querySelector('.altura3').value)
+          let altura4 = Number(document.querySelector('.altura4').value)
+          let altura5 = Number(document.querySelector('.altura5').value)
+          let altura6 = Number(document.querySelector('.altura6').value)
+          let altura7 = Number(document.querySelector('.altura7').value)
+
+
+          let p = document.querySelector('.p')
+          let p1 = document.querySelector('.p1')
+          let p2 = document.querySelector('.p2')
+          let p3 = document.querySelector('.p3')
+
+
+          let mediaTotalDoGrupo = (altura1 + altura2 + altura3 + altura4 + altura5 + altura6 + altura7 ) / 7
+          console.log(mediaTotalDoGrupo)
+
+          let array = [
+              {peso: peso1, altura: altura1},
+              {peso: peso2, altura: altura2},
+              {peso: peso3, altura: altura3},
+              {peso: peso4, altura: altura4},
+              {peso: peso5, altura: altura5},
+              {peso: peso6, altura: altura6},
+              {peso: peso7, altura: altura7},
+          ]
+    
+
+          let maiorNoventa = array.filter(item => {
+              if(item.peso > 90 ) {
+                  return true
+              } else {
+                  return false
+              }
+
+          })
+
+
+          let pesoMenorCinquenta =  array.filter(item => {
+            if(item.peso < 50 && item.altura < 1.60) {
+                 return true
+              } else {
+                  return false 
+              }
+          })
+        
+
+          let pesoMaiorNoventa =  array.filter(item => {
+            if(item.peso > 100 && item.altura > 1.90) {
+                 return true
+              } else {
+                  return false 
+              }
+          })
+
+          console.log(pesoMaiorNoventa)
+
+          p.innerHTML = 'A média de altura do grupo foi: ' + mediaTotalDoGrupo.toFixed(2)
+          p1.innerHTML = 'Pessoas pesam acima de noventa: ' + maiorNoventa.length
+          p2.innerHTML = 'Quantas pessoas que pesam menos de 50Kg tem menos de 1.60m: ' +  pesoMenorCinquenta.length
+          p3.innerHTML = 'Quantas pessoas que medem mais de 1.90m pesam mais de 100Kg: ' + pesoMaiorNoventa.length
+        
+
+      }
+    </script>
+  </body>
+</html>

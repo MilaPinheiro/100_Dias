@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem</title>
+</head>
+
+<body>
+    <div width="100%">
+        <h2>
+            Faça um aplicativo que leia o preço de 8 produtos. No final, mostre na tela
+            qual foi o maior e qual foi o menor preço digitados.
+
+        </h2>
+
+        <input class="input1" type="number" placeholder="Preço 01"> <br>
+        <input class="input2" type="number" placeholder="Preço 02"> <br>
+        <input class="input3" type="number" placeholder="Preço 03"> <br>
+        <input class="input4" type="number" placeholder="Preço 04"> <br>
+        <input class="input5" type="number" placeholder="Preço 05"> <br>
+        <input class="input6" type="number" placeholder="Preço 06"> <br>
+        <input class="input7" type="number" placeholder="Preço 07"> <br>
+        <input class="input8" type="number" placeholder="Preço 09"> <br>
+        <button onclick="calcularSomaSequencia()">Chama Função</button>
+
+        <p class="p"></p>
+        <p class="p1"></p>
+        <p class="p2"></p>
+    </div>
+
+    <script>
+
+        function calcularSomaSequencia() {
+
+            let input1 = Number(document.querySelector('.input1').value)
+            let input2 = Number(document.querySelector('.input2').value)
+            let input3 = Number(document.querySelector('.input3').value)
+            let input4 = Number(document.querySelector('.input4').value)
+            let input5 = Number(document.querySelector('.input5').value)
+            let input6 = Number(document.querySelector('.input6').value)
+            let input7 = Number(document.querySelector('.input7').value)
+            let input8 = Number(document.querySelector('.input8').value)
+
+            let number = 0
+
+            let contagem = [input1, input2, input3, input4, input5, input6, input7, input8]
+
+            let maiorValor = Math.max(...contagem);
+            let menorValor = Math.min(...contagem);
+           
+            let p = document.querySelector('.p')
+            let p1 = document.querySelector('.p1')
+            let p2 = document.querySelector('.p2')
+
+          
+            p1.innerHTML = 'O maior número digitado foi: ' + maiorValor
+            p2.innerHTML = 'O menor número digitado foi: ' + menorValor
+           
+        }
+
+    </script>
+</body>
