@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma entre números do teclado</title>
+</head>
+
+
+<body>
+    <div width="100%">
+
+        <h2>
+            56) Crie um programa que leia vários números pelo teclado e mostre no final o
+            somatório entre eles.
+            Obs: O programa será interrompido quando o número 1111 for digitado
+
+        </h2>
+
+        <input type="number" id="inputNumero">
+  <button onclick="somar()">Adicionar número</button>
+  <p id="resultado"></p>
+
+        
+        
+
+    </div>
+</body>
+
+<style>
+
+
+</style>
+
+<script>
+
+
+    /*   Crie um programa que leia vários números pelo teclado e mostre no final o 
+somatório entre eles.
+Obs: O programa será interrompido quando o número 1111 for digitado
+
+
+    */
+
+
+    
+    let soma = 0;
+
+function somar() {
+  const inputNumero = document.getElementById('inputNumero');
+  const numero = parseInt(inputNumero.value);
+
+  if (numero === 1111) {
+    mostrarResultado();
+    return;
+  }
+
+  soma += numero;
+  inputNumero.value = '';
+}
+
+function mostrarResultado() {
+  const resultado = document.getElementById('resultado');
+  resultado.textContent = `O somatório dos números é: ${soma}`;
+}
+
+    
+
+
+
+
+</script>
+
+
+</html>
+</body>
+
+</html>

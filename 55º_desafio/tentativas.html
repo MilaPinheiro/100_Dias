@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Sorteio Number</title>
+</head>
+
+
+<body>
+    <div width="100%">
+
+        <h2>
+            [DESAFIO] Crie um jogo onde o computador vai sortear um número entre 1 e 5 o
+            jogador vai tentar descobrir qual foi o valor sorteado.
+
+        </h2>
+
+        <div style="border:1px solid red">
+            <p>Clique no botão para sortear um número de 1 a 10</p>
+            <div style="display: flex">
+                <button class="pedra" onclick="calcularNumeroInteiro()"> Clicar </button>
+
+                <button class="verificar" onclick="verificNumber()"> Verificar </button>
+            </div>
+
+        </div>
+
+        <p class="p">Digite a 1º tentativa:</p>
+        <input style="width: 30%" class="input1" type="number" placeholder="Tentativa 01" value=" ">
+
+    </div>
+</body>
+
+<style>
+
+
+</style>
+
+<script>
+
+
+    /*  55) [DESAFIO] Vamos melhorar o jogo que fizemos no exercício 32. A partir de 
+agora, o computador vai sortear um número entre 1 e 10 e o jogador vai ter 4 
+tentativas para tentar acertar.
+
+
+    */
+
+    let botao = document.querySelector('.pedra')
+    let verificar = document.querySelector('.verificar')
+    let p = document.querySelector('.p')
+    let tentativa = 4;
+
+    function calcularNumeroInteiro() {
+        let input = document.querySelector('.input1').value
+        verificar.style.display = "block"
+        input.disabled = "true"
+        let maquina = Math.floor(Math.random() * 11);
+        return maquina
+    }
+
+    function verificNumber() {
+        let input = document.querySelector('.input1').value
+        let maquina = calcularNumeroInteiro()
+        let p = document.querySelector('.p')
+
+        if (input == maquina) {
+            p.innerHTML = `Parabéns! Você acertou o número ${maquina}.`
+        } else {
+            tentativa--; 
+            if (tentativa > 0) {
+                    p.innerHTML = `Você errou. Tente novamente. Tentativas restantes: ${tentativa}`;
+                } else {
+                    p.innerHTML = `Acabaram suas tentativas. O número secreto era ${maquina}.`;
+                    document.querySelector('.verificar').disabled = true;
+                }
+        }
+
+        console.log(maquina)
+
+    }
+
+
+
+</script>
+
+
+</html>
+</body>
+
+</html>
